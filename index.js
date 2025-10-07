@@ -1,26 +1,31 @@
 // Download & import express
-import express from 'express';
+import express, { json } from 'express';
 // Connect it to your app
 const app = express();
 // Listen to it on a port
 const port = 3000;
-// Import routes
-import userRoutes from './routes/users.js'
-import postsRoutes from './routes/posts.js'
-// Call the routes
-app.use('/api/users', userRoutes);
-app.use('/api/posts', postsRoutes);
-// Turn info into JSON
-app.use(express.json())
-
 // Middleware for the time & type of request
 app.use((req, res, next) => {
     const time = new Date();
     console.log( `------------------------
         ${time.toLocaleTimeString()}: Received a ${req.method} request to ${req.url}.
      `);
+     if (Object.keys(req.body).length > 0) {
+        console.log("Containing the data:")
+        console.log(`${JSON.stringify(req.body)}`);
+     }
         next()
 })
+// Import routes
+import userRoutes from './routes/users.js'
+import servicesRoutes from './routes/services.js'
+// Call the routes
+app.use('/api/users', userRoutes);
+app.use('/api/services', servicesRoutes);
+
+// Turn info into JSON
+app.use(express.json())
+
 
 // Home path
 app.get('/', (req, res) => {
@@ -29,7 +34,7 @@ app.get('/', (req, res) => {
 
 
 // Error middleware
-app.use((req, res) => {
+app.use((error, req, res, next) => {
     res.status(404);
     res.send('ERROR!! Page Not Found')
 })
