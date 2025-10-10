@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moment Investors LLC | < </title>
+  </head>
+  <body>
+
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/register">Register</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Services</a></li>
+          <li style="float: right">
+            <a href="/login">Log In</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="miInfo content">
+        <h2>Moment Investors Info</h2>
+
+        <% if(miInfo.length > 0) { %>
+            <% miInfo.forEach(info => { %>
+                <h3 class="title"><%= miInfo.title %></h3>
+                <p class="snippet"><%= miInfo.snippet%></p>
+           <% }) %>
+        <% } %>
+    
+    </div>
+  </body>
+</html>

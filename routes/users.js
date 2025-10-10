@@ -8,9 +8,13 @@ import users from '../data/users.js'
 
 
 // Users path
-router.get('/', (req, res) => {
+router
+.route('/')
+.get((req, res) => {
     res.json(users);
 });
+
+
 
 
 
