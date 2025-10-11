@@ -31,13 +31,6 @@ router
     if (service) res.json(service);
     else next();
   })
-  .delete((req, res, next) => {
-    const service = services.find(
-      (service) => (services.serviceId = req.params.serviceId)
-    );
-    const results = service.deleteOne(req.params.serviceId);
-    res.json(results);
-  });
-
+  
 // Export router
 export default router;

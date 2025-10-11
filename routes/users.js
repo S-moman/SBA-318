@@ -21,12 +21,15 @@ router
     const user = users.find((u, i) => {
         if (u.id == req.params.id) {
             users.splice(i, 1);
-            return true
         }
+        return true
       }
     );
+    if(user) res.json(user);
+    else next()
     
   });
+  
 
 // Export router
 export default router;
