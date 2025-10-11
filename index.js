@@ -21,13 +21,13 @@ app.use((req, res, next) => {
 import userRoutes from './routes/users.js'
 import servicesRoutes from './routes/services.js'
 import scheduleRoutes from './routes/schedule.js'
+// Turn info into JSON
+app.use(express.json())
 // Call the routes
 app.use('/api/users', userRoutes);
 app.use('/api/services', servicesRoutes);
 app.use('/api/schedule', scheduleRoutes);
 
-// Turn info into JSON
-app.use(express.json())
 
 
 // Home path
