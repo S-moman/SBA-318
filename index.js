@@ -23,6 +23,8 @@ import servicesRoutes from './routes/services.js'
 import scheduleRoutes from './routes/schedule.js'
 // Turn info into JSON
 app.use(express.json())
+// register view engine
+app.set("view engine", "ejs");
 // Call the routes
 app.use('/api/users', userRoutes);
 app.use('/api/services', servicesRoutes);
@@ -32,7 +34,7 @@ app.use('/api/schedule', scheduleRoutes);
 
 // Home path
 app.get('/', (req, res) => {
-    res.send('We are live! Welcome to my API!!!')
+    res.render("index", { title: "Home" })
 });
 
 

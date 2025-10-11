@@ -3,10 +3,80 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Moment Investors LLC | < </title>
+    <title>Moment Investors LLC API | <</title>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+      }
+
+      li {
+        float: left;
+        border-right: 1px solid #bbb;
+      }
+
+      li:last-child {
+        border-right: none;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li a:hover {
+        background-color: green;
+      }
+
+      table {
+        /* border: 1px solid blue; */
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        height: 500px;
+        width: 300px;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        margin: 5px 5px 5px 5px;
+        top: 300px;
+      }
+      td {
+        /* border: 1px solid rebeccapurple; */
+        display: flex;
+        justify-content: center;
+      }
+      .pic {
+        height: 100px;
+        position: relative;
+        left: 5px;
+        top: 50px;
+      }
+      .tcontainer {
+        /* border: 2px solid red; */
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+      }
+      .forgotPassword a {
+        color: green;
+      }
+      .forgotPassword a:active {
+        color: blue;
+      }
+    </style>
   </head>
   <body>
-
     <header>
       <nav>
         <ul>
@@ -21,15 +91,22 @@
       </nav>
     </header>
     <div class="miInfo content">
-        <h2>Moment Investors Info</h2>
+      <h1>Welcome to my SBA-318 API</h1>
+      <br />
+      <h2>Introduction</h2>
+      <br />
+      <p>
+        This is the home page for my API. There are a few routes set up to get
+        the information for users, services, and schedules.
+      </p>
+      <br>
+      <h2>Routes</h2>
+      <p>Base URL: <a href="http://localhost:3000/"></a></p>
+      <p>Users: <a href="http://localhost:3000/api/users/"></a> </p>
+      <p>Services: <a href="http://localhost:3000/api/services/"></a></p>
+      <p>Schedule: <a href="http://localhost:3000/api/schedule/"></a></p>
 
-        <% if(miInfo.length > 0) { %>
-            <% miInfo.forEach(info => { %>
-                <h3 class="title"><%= miInfo.title %></h3>
-                <p class="snippet"><%= miInfo.snippet%></p>
-           <% }) %>
-        <% } %>
-    
+
     </div>
   </body>
 </html>
